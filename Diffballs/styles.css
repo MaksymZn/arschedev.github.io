@@ -1,0 +1,104 @@
+/* */
+/* font */
+/* */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    /* unscrollable */
+    overflow: hidden;
+}
+
+/* */
+/* everything else */
+/* */
+
+body {
+    margin: 0;
+    /* header on top, the game field takes all the remaining height */
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 100, 168);
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#header {
+    flex: 0 0 auto;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 8px;
+}
+
+/* title */
+#title {
+    padding: 1px;
+    background: #000;
+    border-radius: 10px;
+    color: #8AB4F8;
+    text-decoration: none;
+}
+
+#title:hover {
+    text-decoration: underline;
+}
+
+/* counters */
+.counter {
+    padding: 1.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: #000;
+    border-radius: 10px;
+    color: gainsboro;
+}
+
+.counter span {
+    font-weight: bold;
+}
+
+/* */
+/* game field */
+/* */
+
+#container {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    /* the border is drawn inside the field, the field never grows */
+    box-sizing: border-box;
+}
+
+#container.bordered {
+    border: 2px dashed #000;
+}
+
+/* balls are drawn on the canvas (much faster than one <div> per ball) */
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* no double-tap zoom / scrolling on touch screens */
+    touch-action: none;
+}
+
+/* */
+/* timer */
+/* */
+
+#timer {
+    font-size: 30px;
+    font-weight: bold;
+}
